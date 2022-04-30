@@ -11,8 +11,7 @@ To compile the project you have to install
 
 To successfully start the application you need to run following commands:
 * docker run -d --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3-management
-* mvn clean install
-* docker build -t sorokinandrey/traveller_importer:0.0.1 .
+* mvn clean spring-boot:build-image
 * docker run -p 8082:8082 sorokinandrey/traveller_importer:0.0.1
 
 The application will start on port 8082.
@@ -26,6 +25,6 @@ In order to save new cities and countries to the database, as well as to get acc
 ### Guides
 
 New docker image creation:
-* mvn spring-boot:build-image
+* mvn clean spring-boot:build-image
 * docker login
 * docker push sorokinandrey/traveller_importer:0.0.1

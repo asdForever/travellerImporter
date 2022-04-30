@@ -14,7 +14,7 @@
     <groupId>kz.homework</groupId>
     <artifactId>travellerStaticContentImporter</artifactId>
     <version>0.0.1</version>
-    <name>traveller-importer</name>
+    <name>traveller_importer</name>
     <description>travellerStaticContentImporter</description>
 
     <properties>

@@ -19,7 +19,7 @@ public class FileReaderService {
     public List<String> getLinesFromFile(String filename) {
         final File file;
         try {
-            file = ResourceUtils.getFile(filename);
+            file = ResourceUtils.getFile("classpath:static/" + filename);
         } catch (FileNotFoundException e) {
             LOG.error(e.getMessage(), e);
             return new ArrayList<>();

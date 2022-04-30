@@ -1,4 +1,4 @@
-# travellerStorage
+# travellerStaticContentImporter
 Static content importer microservice for traveller.
 It parses the data from the static files and sent it to RabbitMQ.
 

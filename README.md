@@ -24,8 +24,6 @@ In order to save new cities and countries to the database, as well as to get acc
 
 New docker image creation:
 * mvn clean install
-* DOCKER_BUILDKIT=1 docker build . -t traveller_importer:0.0.1
-* docker images
-* docker tag traveller_storage:0.0.1 sorokinandrey/traveller_importer:0.0.1
+* DOCKER_BUILDKIT=1 docker build . -t sorokinandrey/traveller_importer:0.0.1
 * docker login
 * docker push sorokinandrey/traveller_importer:0.0.1

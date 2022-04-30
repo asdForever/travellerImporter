@@ -21,7 +21,7 @@ public class FileReaderService {
         try {
             file = ResourceUtils.getFile(filename);
         } catch (FileNotFoundException e) {
-            LOG.error(e.getMessage());
+            LOG.error(e.getMessage(), e);
             return new ArrayList<>();
         }
 
@@ -29,7 +29,7 @@ public class FileReaderService {
             final BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             return reader.lines().collect(Collectors.toList());
         } catch (IOException e) {
-            LOG.error(e.getMessage());
+            LOG.error(e.getMessage(), e);
             return new ArrayList<>();
         }
     }

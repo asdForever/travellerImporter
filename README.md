@@ -11,20 +11,21 @@ To compile the project you have to install
 
 To successfully start the application you need to run following commands:
 * docker run -d --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3-management
-* mvn clean install && mvn spring-boot:run
+* mvn clean install
+* docker build -t sorokinandrey/traveller_importer:0.0.1 .
+* docker run -p 8082:8082 sorokinandrey/traveller_importer:0.0.1
 
 The application will start on port 8082.
 
 At the moment, there are following endpoints are available:
-* GET http://localhost:8082/cities - read all city data from file and sent it to RabbitMQ
-* GET http://localhost:8082/countries - read all country data from file and sent it to RabbitMQ
+* GET http://localhost:8082/add/cities - read all city data from file and sent it to RabbitMQ
+* GET http://localhost:8082/add/countries - read all country data from file and sent it to RabbitMQ
 
 In order to save new cities and countries to the database, as well as to get access to these data, you have to run travellerStorage application.
 
 ### Guides
 
 New docker image creation:
-* mvn clean install
-* DOCKER_BUILDKIT=1 docker build . -t sorokinandrey/traveller_importer:0.0.1
+* mvn spring-boot:build-image
 * docker login
 * docker push sorokinandrey/traveller_importer:0.0.1
